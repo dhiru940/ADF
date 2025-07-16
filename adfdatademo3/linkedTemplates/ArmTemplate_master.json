@@ -1,0 +1,231 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adfdatademo3"
+		},
+		"bloblink_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'bloblink'"
+		},
+		"linkblobtarget_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'linkblobtarget'"
+		},
+		"linklake2source_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'linklake2source'"
+		},
+		"linktarget1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'linktarget1'"
+		},
+		"source22_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'source22'"
+		},
+		"sourcegen2_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'sourcegen2'"
+		},
+		"sqldblinksource_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'sqldblinksource'"
+		},
+		"sqllinkflowsink_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'sqllinkflowsink'"
+		},
+		"targetblob_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'targetblob'"
+		},
+		"targetgen2_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'targetgen2'"
+		},
+		"targetlake2_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'targetlake2'"
+		},
+		"tarsqllink_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'tarsqllink'"
+		},
+		"linklake2source_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://3lakegen2.dfs.core.windows.net/"
+		},
+		"linktarget1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://lake2target.dfs.core.windows.net/"
+		},
+		"source22_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://3lakegen2.dfs.core.windows.net/"
+		},
+		"sourcegen2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://3lakegen2.dfs.core.windows.net/"
+		},
+		"sqldblinksource_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sqlsrvr.database.windows.net"
+		},
+		"sqldblinksource_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "adfcopy"
+		},
+		"sqldblinksource_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "levelup"
+		},
+		"sqllinkflowsink_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sqlsrvr.database.windows.net"
+		},
+		"sqllinkflowsink_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sqldb"
+		},
+		"sqllinkflowsink_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "levelup"
+		},
+		"targetgen2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://lake2target.dfs.core.windows.net/"
+		},
+		"targetlake2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://lake2target.dfs.core.windows.net/"
+		},
+		"tarsqllink_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sqlsrvr.database.windows.net"
+		},
+		"tarsqllink_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sqldb"
+		},
+		"tarsqllink_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "levelup"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "adfdatademo3_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"bloblink_connectionString": {
+						"value": "[parameters('bloblink_connectionString')]"
+					},
+					"linkblobtarget_connectionString": {
+						"value": "[parameters('linkblobtarget_connectionString')]"
+					},
+					"linklake2source_accountKey": {
+						"value": "[parameters('linklake2source_accountKey')]"
+					},
+					"linktarget1_accountKey": {
+						"value": "[parameters('linktarget1_accountKey')]"
+					},
+					"source22_accountKey": {
+						"value": "[parameters('source22_accountKey')]"
+					},
+					"sourcegen2_accountKey": {
+						"value": "[parameters('sourcegen2_accountKey')]"
+					},
+					"sqldblinksource_password": {
+						"value": "[parameters('sqldblinksource_password')]"
+					},
+					"sqllinkflowsink_password": {
+						"value": "[parameters('sqllinkflowsink_password')]"
+					},
+					"targetblob_connectionString": {
+						"value": "[parameters('targetblob_connectionString')]"
+					},
+					"targetgen2_accountKey": {
+						"value": "[parameters('targetgen2_accountKey')]"
+					},
+					"targetlake2_accountKey": {
+						"value": "[parameters('targetlake2_accountKey')]"
+					},
+					"tarsqllink_password": {
+						"value": "[parameters('tarsqllink_password')]"
+					},
+					"linklake2source_properties_typeProperties_url": {
+						"value": "[parameters('linklake2source_properties_typeProperties_url')]"
+					},
+					"linktarget1_properties_typeProperties_url": {
+						"value": "[parameters('linktarget1_properties_typeProperties_url')]"
+					},
+					"source22_properties_typeProperties_url": {
+						"value": "[parameters('source22_properties_typeProperties_url')]"
+					},
+					"sourcegen2_properties_typeProperties_url": {
+						"value": "[parameters('sourcegen2_properties_typeProperties_url')]"
+					},
+					"sqldblinksource_properties_typeProperties_server": {
+						"value": "[parameters('sqldblinksource_properties_typeProperties_server')]"
+					},
+					"sqldblinksource_properties_typeProperties_database": {
+						"value": "[parameters('sqldblinksource_properties_typeProperties_database')]"
+					},
+					"sqldblinksource_properties_typeProperties_userName": {
+						"value": "[parameters('sqldblinksource_properties_typeProperties_userName')]"
+					},
+					"sqllinkflowsink_properties_typeProperties_server": {
+						"value": "[parameters('sqllinkflowsink_properties_typeProperties_server')]"
+					},
+					"sqllinkflowsink_properties_typeProperties_database": {
+						"value": "[parameters('sqllinkflowsink_properties_typeProperties_database')]"
+					},
+					"sqllinkflowsink_properties_typeProperties_userName": {
+						"value": "[parameters('sqllinkflowsink_properties_typeProperties_userName')]"
+					},
+					"targetgen2_properties_typeProperties_url": {
+						"value": "[parameters('targetgen2_properties_typeProperties_url')]"
+					},
+					"targetlake2_properties_typeProperties_url": {
+						"value": "[parameters('targetlake2_properties_typeProperties_url')]"
+					},
+					"tarsqllink_properties_typeProperties_server": {
+						"value": "[parameters('tarsqllink_properties_typeProperties_server')]"
+					},
+					"tarsqllink_properties_typeProperties_database": {
+						"value": "[parameters('tarsqllink_properties_typeProperties_database')]"
+					},
+					"tarsqllink_properties_typeProperties_userName": {
+						"value": "[parameters('tarsqllink_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

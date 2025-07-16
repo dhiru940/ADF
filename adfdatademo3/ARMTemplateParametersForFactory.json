@@ -1,0 +1,90 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adfdatademo3"
+		},
+		"bloblink_connectionString": {
+			"value": ""
+		},
+		"linkblobtarget_connectionString": {
+			"value": ""
+		},
+		"linklake2source_accountKey": {
+			"value": ""
+		},
+		"linktarget1_accountKey": {
+			"value": ""
+		},
+		"source22_accountKey": {
+			"value": ""
+		},
+		"sourcegen2_accountKey": {
+			"value": ""
+		},
+		"sqldblinksource_password": {
+			"value": ""
+		},
+		"sqllinkflowsink_password": {
+			"value": ""
+		},
+		"targetblob_connectionString": {
+			"value": ""
+		},
+		"targetgen2_accountKey": {
+			"value": ""
+		},
+		"targetlake2_accountKey": {
+			"value": ""
+		},
+		"tarsqllink_password": {
+			"value": ""
+		},
+		"linklake2source_properties_typeProperties_url": {
+			"value": "https://3lakegen2.dfs.core.windows.net/"
+		},
+		"linktarget1_properties_typeProperties_url": {
+			"value": "https://lake2target.dfs.core.windows.net/"
+		},
+		"source22_properties_typeProperties_url": {
+			"value": "https://3lakegen2.dfs.core.windows.net/"
+		},
+		"sourcegen2_properties_typeProperties_url": {
+			"value": "https://3lakegen2.dfs.core.windows.net/"
+		},
+		"sqldblinksource_properties_typeProperties_server": {
+			"value": "sqlsrvr.database.windows.net"
+		},
+		"sqldblinksource_properties_typeProperties_database": {
+			"value": "adfcopy"
+		},
+		"sqldblinksource_properties_typeProperties_userName": {
+			"value": "levelup"
+		},
+		"sqllinkflowsink_properties_typeProperties_server": {
+			"value": "sqlsrvr.database.windows.net"
+		},
+		"sqllinkflowsink_properties_typeProperties_database": {
+			"value": "sqldb"
+		},
+		"sqllinkflowsink_properties_typeProperties_userName": {
+			"value": "levelup"
+		},
+		"targetgen2_properties_typeProperties_url": {
+			"value": "https://lake2target.dfs.core.windows.net/"
+		},
+		"targetlake2_properties_typeProperties_url": {
+			"value": "https://lake2target.dfs.core.windows.net/"
+		},
+		"tarsqllink_properties_typeProperties_server": {
+			"value": "sqlsrvr.database.windows.net"
+		},
+		"tarsqllink_properties_typeProperties_database": {
+			"value": "sqldb"
+		},
+		"tarsqllink_properties_typeProperties_userName": {
+			"value": "levelup"
+		}
+	}
+}
