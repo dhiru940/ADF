@@ -1,0 +1,12 @@
+{
+	"name": "source22",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://3lakegen2.dfs.core.windows.net/",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDI3MDY0QzJCLTJDMjItNDM3Ni05QjUyLUY0MTExM0U4MkVFNl85MmU1MTNhNi1hNDI4LTRkN2QtOTQyYi0wM2U1NDNjYjNlNDQiDQp9"
+		}
+	}
+}
