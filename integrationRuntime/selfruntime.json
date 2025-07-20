@@ -1,6 +1,10 @@
 {
 	"name": "selfruntime",
 	"properties": {
-		"type": "SelfHosted"
+		"type": "SelfHosted",
+		"description": "self",
+		"typeProperties": {
+			"selfContainedInteractiveAuthoringEnabled": false
+		}
 	}
 }
